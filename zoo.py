@@ -39,7 +39,9 @@ while not salir:
  
     print ("\n \n1. Añadir un animal a la lista")
     print ("2. Ver la lista")
-    print ("3. Salir") 
+    print ("3. Cambiar algo en las listas")
+    print ("4. Salir") 
+    
     print ("Elige una opcion")
  
     opcion = Menu()
@@ -56,6 +58,29 @@ while not salir:
         for element in lista_mkgasto:
          print (element)
     elif opcion == 3:
+        ulsa= int(input ("Deseas cambiar algo en una de las dos listas?\n1.Si\n2.No\n"))
+        if ulsa== 1:
+         dano= input("A los nombres o a los tipos de los animales?\n ")
+         if dano==("nombres"):
+          for element in lista_anim:
+           print(lista_anim.index(element), element)          
+          b=int (input("Dame el id del animal que quieres cambiar\n"))
+          lista_anim[b] = input("Nombre nuevo del animal?\n")
+          print ("Lista nueva")
+          for element in lista_anim:
+           print (element)
+         if dano==("tipos"):
+          for element in lista_tipo:
+           print(lista_tipo.index(element), element)          
+          b=int (input("Dame el id del tipo de animal que quieres cambiar\n"))
+          lista_tipo[b] = input("Nombre nuevo del animal?\n")
+          print ("Lista nueva")
+          for element in lista_tipo:
+           print (element)
+         
+        if ulsa== 2:
+         print("")
+    elif opcion == 4:
         salir = True
     else:
         print ("Esa no es una opcion, intenta de nuevo")
